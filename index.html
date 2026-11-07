@@ -3,29 +3,30 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>𝗦𝗔𝗟𝗠𝗔𝗡 𝗠𝗘𝗠𝗢𝗡 ( HALAL WORK )</title>
+  <title>Salman - Ethical Market Learning</title>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
  
-<!-- Meta Pixel Code -->
-<script>
-!function(f,b,e,v,n,t,s)
-{if(f.fbq)return;n=f.fbq=function(){n.callMethod?
-n.callMethod.apply(n,arguments):n.queue.push(arguments)};
-if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
-n.queue=[];t=b.createElement(e);t.async=!0;
-t.src=v;s=b.getElementsByTagName(e)[0];
-s.parentNode.insertBefore(t,s)}(window, document,'script',
-'https://connect.facebook.net/en_US/fbevents.js');
-fbq('init', '1110058778398308');
-fbq('track', 'PageView');
-</script>
-<noscript><img height="1" width="1" style="display:none"
-src="https://www.facebook.com/tr?id=1110058778398308&ev=PageView&noscript=1"
-/></noscript>
-<!-- End Meta Pixel Code -->
+  <!-- Meta Pixel Code -->
+  <script>
+    !function(f,b,e,v,n,t,s)
+    {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+    n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+    if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+    n.queue=[];t=b.createElement(e);t.async=!0;
+    t.src=v;s=b.getElementsByTagName(e)[0];
+    s.parentNode.insertBefore(t,s)}(window, document,'script',
+    'https://connect.facebook.net/en_US/fbevents.js');
+    fbq('init', '1110058778398308');
+    fbq('track', 'PageView');
+  </script>
+  <noscript>
+    <img height="1" width="1" style="display:none"
+    src="https://www.facebook.com/tr?id=1110058778398308&ev=PageView&noscript=1" />
+  </noscript>
+  <!-- End Meta Pixel Code -->
  
- <style>
+  <style>
     * {
       box-sizing: border-box;
       margin: 0;
@@ -35,263 +36,165 @@ src="https://www.facebook.com/tr?id=1110058778398308&ev=PageView&noscript=1"
     }
 
     body {
-      background: #f4f7fb;
+      background: #f8fafc;
       color: #1e293b;
       display: flex;
       justify-content: center;
       align-items: flex-start;
       min-height: 100vh;
-      padding: 12px;
+      padding: 24px 12px;
     }
 
-    /* Mobile Container */
-    .mobile-card {
+    .container-card {
       width: 100%;
-      max-width: 420px;
+      max-width: 440px;
       background: #ffffff;
-      border-radius: 24px;
-      padding: 24px 18px;
-      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+      border: 1px solid #e2e8f0;
+      border-radius: 20px;
+      padding: 28px 20px;
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.04);
       display: flex;
       flex-direction: column;
       align-items: center;
       text-align: center;
+    }
+
+    .badge {
+      background-color: #eff6ff;
+      color: #2563eb;
+      font-size: 11px;
+      font-weight: 700;
+      padding: 6px 14px;
+      border-radius: 30px;
+      margin-bottom: 22px;
+      letter-spacing: 0.5px;
+      text-transform: uppercase;
+    }
+
+    /* Custom Crafted Logo Wrapper */
+    .logo-container {
+      width: 90px;
+      height: 90px;
+      background: radial-gradient(circle, #ffffff 60%, #f0f7ff 100%);
+      border: 3px solid #2563eb;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 16px;
+      box-shadow: 0 4px 12px rgba(37, 99, 235, 0.15);
       position: relative;
     }
 
-    /* Live Online Badge */
-    .online-badge {
-      background-color: #e6f9ed;
-      color: #16a34a;
-      font-size: 13px;
-      font-weight: 600;
-      padding: 6px 14px;
-      border-radius: 20px;
-      display: inline-flex;
+    .logo-graphic {
+      font-size: 34px;
+      font-weight: 800;
+      color: #1e3a8a;
+      display: flex;
       align-items: center;
-      gap: 6px;
-      margin-bottom: 20px;
+      justify-content: center;
+      position: relative;
     }
 
-    .pulse-dot {
-      width: 8px;
-      height: 8px;
-      background-color: #22c55e;
-      border-radius: 50%;
-      box-shadow: 0 0 0 0 rgba(34, 197, 94, 0.7);
-      animation: pulse 1.6s infinite;
+    .logo-graphic i {
+      position: absolute;
+      font-size: 16px;
+      color: #eab308; /* Premium Gold/Yellow */
+      bottom: -4px;
+      right: -8px;
     }
 
-    @keyframes pulse {
-      0% {
-        transform: scale(0.95);
-        box-shadow: 0 0 0 0 rgba(34, 197, 94, 0.7);
-      }
-      70% {
-        transform: scale(1);
-        box-shadow: 0 0 0 8px rgba(34, 197, 94, 0);
-      }
-      100% {
-        transform: scale(0.95);
-        box-shadow: 0 0 0 0 rgba(34, 197, 94, 0);
-      }
-    }
-
-    /* Profile / Logo Avatar */
-    .avatar-wrapper {
-      width: 110px;
-      height: 110px;
-      border-radius: 50%;
-      padding: 3px;
-      background: linear-gradient(135deg, #2563eb, #3b82f6);
-      margin-bottom: 16px;
-      box-shadow: 0 8px 20px rgba(37, 99, 235, 0.2);
-    }
-
-    .avatar-img {
-      width: 100%;
-      height: 100%;
-      border-radius: 50%;
-      object-fit: cover;
-      background: #e2e8f0;
-      border: 3px solid #fff;
-    }
-
-    /* Main Headings */
     .main-title {
-      font-size: 20px;
+      font-size: 24px;
       font-weight: 800;
       color: #0f172a;
-      line-height: 1.35;
-      letter-spacing: -0.2px;
-      margin-bottom: 8px;
+      line-height: 1.3;
+      margin-bottom: 6px;
+      letter-spacing: -0.5px;
     }
 
     .sub-title {
-      font-size: 13px;
-      color: #2563eb;
-      font-weight: 700;
-      margin-bottom: 12px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      gap: 6px;
-    }
-
-    /* Rating Section */
-    .stars {
-      color: #f59e0b;
-      font-size: 16px;
-      letter-spacing: 2px;
-      margin-bottom: 4px;
-    }
-
-    .rating-text {
-      font-size: 12px;
+      font-size: 14px;
       color: #64748b;
       font-weight: 500;
-      margin-bottom: 20px;
+      margin-bottom: 24px;
+      line-height: 1.45;
     }
 
-    /* Action Button */
     .cta-btn {
       width: 100%;
-      background: linear-gradient(180deg, #1d4ed8 0%, #2563eb 50%, #1e40af 100%);
+      background: #2563eb;
       color: #ffffff;
-      font-size: 16px;
+      font-size: 15px;
       font-weight: 700;
       padding: 16px 20px;
-      border-radius: 14px;
-      border: none;
-      cursor: pointer;
-      box-shadow: 0 8px 20px rgba(37, 99, 235, 0.35);
-      transition: all 0.2s ease;
-      display: flex;
+      border-radius: 12px;
+      text-decoration: none;
+      display: inline-flex;
       align-items: center;
       justify-content: center;
       gap: 8px;
-      text-decoration: none;
-      margin-bottom: 20px;
+      transition: background-color 0.2s ease;
+      margin-bottom: 22px;
+      box-shadow: 0 4px 12px rgba(37, 99, 235, 0.2);
     }
 
-    .cta-btn:active {
-      transform: scale(0.98);
-      box-shadow: 0 4px 12px rgba(37, 99, 235, 0.25);
+    .cta-btn:hover {
+      background: #1d4ed8;
     }
 
-    /* Stats Grid */
-    .stats-container {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 10px;
+    .info-list {
       width: 100%;
-      margin-bottom: 24px;
+      margin-bottom: 26px;
     }
 
-    .stat-card {
+    .info-item {
       background: #f8fafc;
       border: 1px solid #edf2f7;
-      border-radius: 14px;
-      padding: 12px 6px;
-    }
-
-    .stat-val {
-      font-size: 18px;
-      font-weight: 800;
-      color: #2563eb;
-      line-height: 1.2;
-    }
-
-    .stat-lbl {
-      font-size: 11px;
-      color: #64748b;
-      font-weight: 600;
-      margin-top: 4px;
-    }
-
-    /* Callout Titles */
-    .section-headline {
-      font-size: 16px;
-      font-weight: 800;
-      color: #0f172a;
-      margin-bottom: 4px;
-    }
-
-    .section-headline span {
-      color: #2563eb;
-    }
-
-    .section-sub {
-      font-size: 13px;
-      font-weight: 700;
-      color: #1e293b;
-      margin-bottom: 4px;
-    }
-
-    .section-desc {
-      font-size: 12px;
-      color: #64748b;
-      margin-bottom: 16px;
-    }
-
-    /* Alert / Promo Strip */
-    .promo-banner {
-      width: 100%;
-      background: #fff7ed;
-      border: 1px dashed #fdba74;
-      color: #ea580c;
-      font-size: 13px;
-      font-weight: 700;
-      padding: 10px;
-      border-radius: 12px;
-      margin-bottom: 16px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      gap: 6px;
-    }
-
-    /* Features List */
-    .feature-list {
-      width: 100%;
-      display: flex;
-      flex-direction: column;
-      gap: 12px;
-      margin-bottom: 20px;
-    }
-
-    .feature-item {
-      background: #f8fafc;
-      border: 1px solid #f1f5f9;
       padding: 14px 16px;
-      border-radius: 14px;
+      border-radius: 12px;
       display: flex;
       align-items: center;
       gap: 12px;
       text-align: left;
-      font-size: 13px;
+      font-size: 13.5px;
       font-weight: 600;
-      color: #334155;
+      color: #1e293b;
     }
 
-    .feature-icon {
-      width: 32px;
-      height: 32px;
-      border-radius: 8px;
-      background: #eff6ff;
+    .info-icon {
       color: #2563eb;
+      font-size: 16px;
+      width: 24px;
+      height: 24px;
+      background: #eff6ff;
+      border-radius: 6px;
       display: flex;
       align-items: center;
       justify-content: center;
-      font-size: 16px;
-      flex-shrink: 0;
     }
 
-    /* Disclaimer & Links */
-    .disclaimer-text {
-      font-size: 10.5px;
+    /* Disclaimer & Privacy footer */
+    .compliance-box {
+      border-top: 1px solid #e2e8f0;
+      padding-top: 18px;
+      width: 100%;
+      text-align: left;
+    }
+
+    .compliance-text {
+      font-size: 11px;
+      color: #64748b;
+      line-height: 1.55;
+      margin-bottom: 12px;
+    }
+
+    .meta-disclaimer {
+      font-size: 10px;
       color: #94a3b8;
       line-height: 1.5;
+      border-top: 1px dashed #e2e8f0;
+      padding-top: 12px;
       margin-bottom: 16px;
     }
 
@@ -299,27 +202,25 @@ src="https://www.facebook.com/tr?id=1110058778398308&ev=PageView&noscript=1"
       display: flex;
       flex-wrap: wrap;
       justify-content: center;
-      gap: 12px 18px;
-      border-top: 1px solid #f1f5f9;
-      padding-top: 16px;
+      gap: 10px 16px;
       width: 100%;
     }
 
     .footer-link {
-      font-size: 12px;
-      color: #2563eb;
+      font-size: 11px;
+      color: #475569;
       font-weight: 600;
-      text-decoration: none;
+      text-decoration: underline;
       cursor: pointer;
       background: none;
       border: none;
     }
 
     .footer-link:hover {
-      text-decoration: underline;
+      color: #0f172a;
     }
 
-    /* POPUP MODAL STYLES */
+    /* Simple Modular Overlay */
     .modal-overlay {
       position: fixed;
       top: 0;
@@ -327,14 +228,14 @@ src="https://www.facebook.com/tr?id=1110058778398308&ev=PageView&noscript=1"
       width: 100vw;
       height: 100vh;
       background: rgba(15, 23, 42, 0.6);
-      backdrop-filter: blur(4px);
+      backdrop-filter: blur(2px);
       display: flex;
       justify-content: center;
       align-items: center;
       z-index: 1000;
       opacity: 0;
       visibility: hidden;
-      transition: all 0.25s ease;
+      transition: all 0.2s ease;
       padding: 16px;
     }
 
@@ -348,223 +249,133 @@ src="https://www.facebook.com/tr?id=1110058778398308&ev=PageView&noscript=1"
       width: 100%;
       max-width: 400px;
       max-height: 80vh;
-      border-radius: 20px;
-      padding: 24px;
-      box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
+      border-radius: 16px;
+      padding: 22px;
       display: flex;
       flex-direction: column;
-      position: relative;
-      transform: translateY(20px);
-      transition: transform 0.25s ease;
-    }
-
-    .modal-overlay.active .modal-box {
-      transform: translateY(0);
     }
 
     .modal-header {
       display: flex;
       justify-content: space-between;
       align-items: center;
-      border-bottom: 1px solid #f1f5f9;
-      padding-bottom: 12px;
-      margin-bottom: 16px;
+      border-bottom: 1px solid #e2e8f0;
+      padding-bottom: 10px;
+      margin-bottom: 14px;
     }
 
     .modal-title {
-      font-size: 17px;
+      font-size: 16px;
       font-weight: 700;
       color: #0f172a;
     }
 
     .close-btn {
-      background: #f1f5f9;
+      background: none;
       border: none;
-      width: 32px;
-      height: 32px;
-      border-radius: 50%;
-      font-size: 16px;
+      font-size: 20px;
       color: #64748b;
       cursor: pointer;
-      display: flex;
-      align-items: center;
-      justify-content: center;
+      line-height: 1;
     }
 
     .modal-body {
       overflow-y: auto;
-      font-size: 13px;
+      font-size: 12.5px;
       color: #475569;
       line-height: 1.6;
       text-align: left;
     }
 
     .modal-body p {
-      margin-bottom: 12px;
-    }
-
-    .contact-item {
-      display: flex;
-      align-items: center;
-      gap: 12px;
-      padding: 12px;
-      background: #f8fafc;
-      border-radius: 10px;
       margin-bottom: 10px;
-    }
-
-    .contact-item i {
-      color: #2563eb;
-      font-size: 18px;
     }
   </style>
 </head>
 <body>
 
-  <div class="mobile-card">
-    <!-- Live Online Badge -->
-    <div class="online-badge">
-      <span class="pulse-dot"></span>
-      5,947 Traders Online Now
+  <div class="container-card">
+    <div class="">
+      
     </div>
 
-    <!-- LOGO / PROFILE IMAGE -->
-    <div class="avatar-wrapper">
-      <img src="Salman.jpeg" alt="Salman Memon Logo" class="avatar-img">
+    <!-- Custom Digital Styled Logo -->
+    <div class="logo-container">
+      <div class="logo-graphic">
+        SM
+        <i class="fa-solid fa-arrow-trend-up"></i>
+      </div>
     </div>
 
-    <!-- Title & Subtitle -->
-    <h1 class="main-title">𝗦𝗔𝗟𝗠𝗔𝗡 𝗠𝗘𝗠𝗢𝗡<br><span style="font-size:15px; font-weight:700;">( HALAL WORK )</span></h1>
-    <div class="sub-title">
-      🏆 India's No.1 Stock Market Channel
-    </div>
+    <h1 class="main-title">Salman</h1>
+    <p class="sub-title">Join our learning community and grow your knowledge</p>
 
-    <!-- Ratings -->
-    <div class="stars">★★★★★</div>
-    <div class="rating-text">4.9/5 (2340 Reviews)</div>
-
-    <!-- Telegram CTA Button 1 -->
-    <a href="https://t.me/+Clle_9iFmX1jOWY1" target="_blank" class="cta-btn">
-      Join Free Telegram Channel &rarr;
+    <a href="https://t.me/+Clle_9iFmX1jOWY1" target="_blank" rel="noopener noreferrer" class="cta-btn">
+       View Community Channel <i class="fa-solid fa-paper-plane"></i>
     </a>
 
-    <!-- Stats Grid -->
-    <div class="stats-container">
-      <div class="stat-card">
-        <div class="stat-val">50K+</div>
-        <div class="stat-lbl">Members</div>
-      </div>
-      <div class="stat-card">
-        <div class="stat-val">5+</div>
-        <div class="stat-lbl">Years</div>
-      </div>
-      <div class="stat-card">
-        <div class="stat-val">95%</div>
-        <div class="stat-lbl">Accuracy</div>
+    <div class="info-list">
+      <div class="info-item">
+        <div class="info-icon"><i class="fa-solid fa-chart-line"></i></div>
+        <span>नियत अच्छी और मेहनत सच्ची हो, तो कामयाबी जरूर मिलती है।</span>
       </div>
     </div>
 
-    <!-- Mid Section Titles -->
-    <div class="section-headline">Get <span>FREE</span> Daily Calls</div>
-    <div class="section-sub">for NIFTY, BANKNIFTY & SENSEX</div>
-    <div class="section-desc">Join thousands of traders getting daily market analysis</div>
+  
 
-    <!-- Limited Access Banner -->
-    <div class="promo-banner">
-      🔥 Limited FREE Access Available
-    </div>
+      <p class="meta-disclaimer">
+        This site is not a part of the Facebook™ website or Meta Platforms, Inc. Additionally, this site is NOT endorsed by Meta in any way. FACEBOOK™ is a trademark of META PLATFORMS, INC.
+      </p>
 
-    <!-- Features List -->
-    <div class="feature-list">
-      <div class="feature-item">
-        <div class="feature-icon"><i class="fa-solid fa-chart-line"></i></div>
-        <span>Daily Nifty & BankNifty Levels</span>
+      <div class="footer-links">
+        <button class="footer-link" onclick="openModal('privacy')">Privacy Policy</button>
+        <button class="footer-link" onclick="openModal('terms')">Terms of Service</button>
+        <button class="footer-link" onclick="openModal('disclaimer')">Risk Disclaimer</button>
+        <button class="footer-link" onclick="openModal('contact')">Contact</button>
       </div>
-      <div class="feature-item">
-        <div class="feature-icon"><i class="fa-solid fa-graduation-cap"></i></div>
-        <span>Educational Market Analysis</span>
-      </div>
-      <div class="feature-item">
-        <div class="feature-icon"><i class="fa-solid fa-users"></i></div>
-        <span>50,000+ Subscribers Community</span>
-      </div>
-    </div>
-
-    <!-- Telegram CTA Button 2 -->
-    <a href="https://t.me/+Clle_9iFmX1jOWY1" target="_blank" class="cta-btn">
-      Join Free Telegram Channel &rarr;
-    </a>
-
-    <!-- Disclaimer Text -->
-    <div class="disclaimer-text">
-      <strong>Disclaimer:</strong> This channel is for educational purposes only. Trading involves market risk. Please consult your financial advisor before making investment decisions.
-    </div>
-
-    <!-- Popup Triggers Footer Links -->
-    <div class="footer-links">
-      <button class="footer-link" onclick="openModal('terms')">Terms & Conditions</button>
-      <button class="footer-link" onclick="openModal('about')">About Us</button>
-      <button class="footer-link" onclick="openModal('disclaimer')">Disclaimer</button>
-      <button class="footer-link" onclick="openModal('contact')">Contact Us</button>
     </div>
   </div>
 
-  <!-- POPUP MODAL CONTAINER -->
+  <!-- MODAL -->
   <div class="modal-overlay" id="modalOverlay" onclick="closeModalOnOverlay(event)">
     <div class="modal-box">
       <div class="modal-header">
-        <div class="modal-title" id="modalTitle">Modal Title</div>
+        <div class="modal-title" id="modalTitle">Information</div>
         <button class="close-btn" onclick="closeModal()">&times;</button>
       </div>
-      <div class="modal-body" id="modalBody">
-        <!-- Content will load dynamically -->
-      </div>
+      <div class="modal-body" id="modalBody"></div>
     </div>
   </div>
 
   <script>
-    // Content for Popups
     const modalData = {
-      terms: {
-        title: "Terms & Conditions",
+      privacy: {
+        title: "Privacy Policy",
         content: `
-          <p>Welcome to <strong>𝗦𝗔𝗟𝗠𝗔𝗡 𝗠𝗘𝗠𝗢𝗡 ( HALAL WORK )</strong>.</p>
-          <p>1. <strong>Educational Content:</strong> All content, research, and analysis shared on this platform/channel are strictly for educational and informational purposes.</p>
-          <p>2. <strong>No Financial Advice:</strong> We do not provide guaranteed returns, portfolio management, or personal financial advice.</p>
-          <p>3. <strong>User Responsibility:</strong> Any trades or investments made based on our analysis are purely at your own risk and responsibility.</p>
+          <p>We respect your privacy. This page uses standard tracking technologies, such as the Meta Pixel, only to evaluate ad performance and improve user experience.</p>
+          <p>We do not sell, rent, or trade your personal data to any third-party organizations.</p>
         `
       },
-      about: {
-        title: "About Us",
+      terms: {
+        title: "Terms of Service",
         content: `
-          <p><strong>𝗦𝗔𝗟𝗠𝗔𝗡 𝗠𝗘𝗠𝗢𝗡</strong> is one of India's trusted market analysis and educational communities focused on Ethical & Halal trading principles in Stock Markets.</p>
-          <p>With over <strong>5+ years of experience</strong> and <strong>50,000+ active members</strong>, our goal is to help traders understand price action, Nifty/BankNifty levels, and market psychology.</p>
+          <p>1. <strong>Educational Material:</strong> All charts, analysis, and materials shared are intended purely for training and learning.</p>
+          <p>2. <strong>No Investment Advice:</strong> Nothing on this channel constitutes an offer, solicitation, or recommendation to buy or sell securities.</p>
+          <p>3. <strong>Independent Decision:</strong> Users bear full personal responsibility for any trades or financial decisions they execute.</p>
         `
       },
       disclaimer: {
-        title: "Disclaimer",
+        title: "Risk Disclaimer",
         content: `
-          <p><strong>Risk Warning:</strong> Trading in Stock, Futures, Options, and Commodities involves substantial risk of loss and is not suitable for every investor.</p>
-          <p>Valuations can fluctuate, and investors may lose more than their original investment.</p>
-          <p>We are not SEBI registered financial advisors (unless specified). Please consult a certified financial advisor before taking any financial steps.</p>
+          <p>Trading in financial markets carries substantial risk of capital loss. Past performance of any setup or analysis does not guarantee future results.</p>
+          <p>We are an independent educational initiative and not registered as a SEBI Investment Advisor or Research Analyst unless explicitly stated.</p>
         `
       },
       contact: {
-        title: "Contact Us",
+        title: "Contact Details",
         content: `
-          <p>If you have any questions or queries, feel free to reach out to us:</p>
-          <div class="contact-item">
-            <i class="fa-brands fa-telegram"></i>
-            <div><strong>Telegram Join Link:</strong><br><a href="https://t.me/+Clle_9iFmX1jOWY1" target="_blank" style="color:#2563eb;">Click Here to Join</a></div>
-          </div>
-          <div class="contact-item">
-            <i class="fa-solid fa-envelope"></i>
-            <div><strong>Email Support:</strong><br>contact@salmanmemon.com</div>
-          </div>
-          <div class="contact-item">
-            <i class="fa-solid fa-clock"></i>
-            <div><strong>Support Hours:</strong><br>Mon - Sat (9:00 AM - 6:00 PM)</div>
-          </div>
+          <p><strong>Support Email:</strong> contact@salmanmemon.com</p>
+          <p><strong>Response Time:</strong> Monday to Friday (10:00 AM – 6:00 PM IST)</p>
         `
       }
     };
@@ -572,25 +383,19 @@ src="https://www.facebook.com/tr?id=1110058778398308&ev=PageView&noscript=1"
     function openModal(type) {
       const data = modalData[type];
       if (!data) return;
-      
       document.getElementById('modalTitle').innerText = data.title;
       document.getElementById('modalBody').innerHTML = data.content;
-      
-      const modal = document.getElementById('modalOverlay');
-      modal.classList.add('active');
+      document.getElementById('modalOverlay').classList.add('active');
       document.body.style.overflow = 'hidden';
     }
 
     function closeModal() {
-      const modal = document.getElementById('modalOverlay');
-      modal.classList.remove('active');
+      document.getElementById('modalOverlay').classList.remove('active');
       document.body.style.overflow = 'auto';
     }
 
     function closeModalOnOverlay(e) {
-      if (e.target.id === 'modalOverlay') {
-        closeModal();
-      }
+      if (e.target.id === 'modalOverlay') closeModal();
     }
   </script>
 </body>
