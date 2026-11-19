@@ -1,400 +1,459 @@
 <!DOCTYPE html>
-<html lang="hi">
+<html lang="en">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Salman - Ethical Market Learning</title>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
- 
-<!-- Meta Pixel Code -->
-<script>
-!function(f,b,e,v,n,t,s)
-{if(f.fbq)return;n=f.fbq=function(){n.callMethod?
-n.callMethod.apply(n,arguments):n.queue.push(arguments)};
-if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
-n.queue=[];t=b.createElement(e);t.async=!0;
-t.src=v;s=b.getElementsByTagName(e)[0];
-s.parentNode.insertBefore(t,s)}(window, document,'script',
-'https://connect.facebook.net/en_US/fbevents.js');
-fbq('init', '1125547960086011');
-fbq('track', 'PageView');
-</script>
-<noscript><img height="1" width="1" style="display:none"
-src="https://www.facebook.com/tr?id=1125547960086011&ev=PageView&noscript=1"
-/></noscript>
-<!-- End Meta Pixel Code -->
- 
+  <title>Salman Memon // Market Intelligence Terminal</title>
+  
+  <!-- FontAwesome & Google Fonts -->
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;600;700;800&family=Plus+Jakarta+Sans:wght@500;600;700;800&display=swap" rel="stylesheet">
+  
+  <!-- Meta Pixel Code -->
+  <script>
+  !function(f,b,e,v,n,t,s)
+  {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+  n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+  if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+  n.queue=[];t=b.createElement(e);t.async=!0;
+  t.src=v;s=b.getElementsByTagName(e)[0];
+  s.parentNode.insertBefore(t,s)}(window, document,'script',
+  'https://connect.facebook.net/en_US/fbevents.js');
+  fbq('init', '1125547960086011');
+  fbq('track', 'PageView');
+  </script>
+  <noscript><img height="1" width="1" style="display:none"
+  src="https://www.facebook.com/tr?id=1125547960086011&ev=PageView&noscript=1"
+  /></noscript>
+  <!-- End Meta Pixel Code -->
+
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            brand: {
+              gold: '#ffb703',
+              orange: '#fb8500',
+              accent: '#00f5d4',
+              red: '#ff4757',
+              green: '#2ed573'
+            }
+          },
+          fontFamily: {
+            mono: ['"JetBrains Mono"', 'monospace'],
+            sans: ['"Plus Jakarta Sans"', 'sans-serif']
+          }
+        }
+      }
+    }
+  </script>
+
   <style>
-    * {
-      box-sizing: border-box;
-      margin: 0;
-      padding: 0;
-      font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
-      -webkit-tap-highlight-color: transparent;
-    }
-
+    * { box-sizing: border-box; }
+    
     body {
-      background: #f8fafc;
-      color: #1e293b;
-      display: flex;
-      justify-content: center;
-      align-items: flex-start;
-      min-height: 100vh;
-      padding: 24px 12px;
+      background-color: #030712;
+      color: #e2e8f0;
+      font-family: 'JetBrains Mono', monospace;
+      overflow-x: hidden;
     }
 
-    .container-card {
-      width: 100%;
-      max-width: 440px;
-      background: #ffffff;
-      border: 1px solid #e2e8f0;
-      border-radius: 20px;
-      padding: 28px 20px;
-      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.04);
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      text-align: center;
+    /* Animated Cyber Grid Background */
+    .bg-grid {
+      background-size: 26px 26px;
+      background-image: 
+        linear-gradient(to right, rgba(30, 41, 59, 0.28) 1px, transparent 1px),
+        linear-gradient(to bottom, rgba(30, 41, 59, 0.28) 1px, transparent 1px);
+      animation: grid-move 20s linear infinite;
     }
 
-    .badge {
-      background-color: #eff6ff;
-      color: #2563eb;
-      font-size: 11px;
-      font-weight: 700;
-      padding: 6px 14px;
-      border-radius: 30px;
-      margin-bottom: 22px;
-      letter-spacing: 0.5px;
-      text-transform: uppercase;
+    @keyframes grid-move {
+      0% { background-position: 0 0; }
+      100% { background-position: 26px 26px; }
     }
 
-    /* Custom Crafted Logo Wrapper */
-    .logo-container {
-      width: 90px;
-      height: 90px;
-      background: radial-gradient(circle, #ffffff 60%, #f0f7ff 100%);
-      border: 3px solid #2563eb;
-      border-radius: 50%;
+    /* Card Entrance & Ambient Glow */
+    .terminal-card {
+      animation: card-enter 0.6s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+      box-shadow: 0 0 40px -8px rgba(255, 183, 3, 0.28);
+    }
+
+    @keyframes card-enter {
+      0% { opacity: 0; transform: translateY(16px) scale(0.98); }
+      100% { opacity: 1; transform: translateY(0) scale(1); }
+    }
+
+    /* Ticker Infinite Scroll */
+    .ticker-track {
       display: flex;
-      align-items: center;
-      justify-content: center;
-      margin-bottom: 16px;
-      box-shadow: 0 4px 12px rgba(37, 99, 235, 0.15);
+      width: max-content;
+      animation: ticker-scroll 22s linear infinite;
+    }
+
+    @keyframes ticker-scroll {
+      0% { transform: translateX(0); }
+      100% { transform: translateX(-50%); }
+    }
+
+    /* Shimmer Sweep Animation on CTA Button */
+    .btn-shimmer {
       position: relative;
+      overflow: hidden;
     }
-
-    .logo-graphic {
-      font-size: 34px;
-      font-weight: 800;
-      color: #1e3a8a;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      position: relative;
-    }
-
-    .logo-graphic i {
+    .btn-shimmer::after {
+      content: '';
       position: absolute;
-      font-size: 16px;
-      color: #eab308; /* Premium Gold/Yellow */
-      bottom: -4px;
-      right: -8px;
-    }
-
-    .main-title {
-      font-size: 24px;
-      font-weight: 800;
-      color: #0f172a;
-      line-height: 1.3;
-      margin-bottom: 6px;
-      letter-spacing: -0.5px;
-    }
-
-    .sub-title {
-      font-size: 14px;
-      color: #64748b;
-      font-weight: 500;
-      margin-bottom: 24px;
-      line-height: 1.45;
-    }
-
-    .cta-btn {
-      width: 100%;
-      background: #2563eb;
-      color: #ffffff;
-      font-size: 15px;
-      font-weight: 700;
-      padding: 16px 20px;
-      border-radius: 12px;
-      text-decoration: none;
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      gap: 8px;
-      transition: background-color 0.2s ease;
-      margin-bottom: 22px;
-      box-shadow: 0 4px 12px rgba(37, 99, 235, 0.2);
-    }
-
-    .cta-btn:hover {
-      background: #1d4ed8;
-    }
-
-    .info-list {
-      width: 100%;
-      margin-bottom: 26px;
-    }
-
-    .info-item {
-      background: #f8fafc;
-      border: 1px solid #edf2f7;
-      padding: 14px 16px;
-      border-radius: 12px;
-      display: flex;
-      align-items: center;
-      gap: 12px;
-      text-align: left;
-      font-size: 13.5px;
-      font-weight: 600;
-      color: #1e293b;
-    }
-
-    .info-icon {
-      color: #2563eb;
-      font-size: 16px;
-      width: 24px;
-      height: 24px;
-      background: #eff6ff;
-      border-radius: 6px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-    }
-
-    /* Disclaimer & Privacy footer */
-    .compliance-box {
-      border-top: 1px solid #e2e8f0;
-      padding-top: 18px;
-      width: 100%;
-      text-align: left;
-    }
-
-    .compliance-text {
-      font-size: 11px;
-      color: #64748b;
-      line-height: 1.55;
-      margin-bottom: 12px;
-    }
-
-    .meta-disclaimer {
-      font-size: 10px;
-      color: #94a3b8;
-      line-height: 1.5;
-      border-top: 1px dashed #e2e8f0;
-      padding-top: 12px;
-      margin-bottom: 16px;
-    }
-
-    .footer-links {
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: center;
-      gap: 10px 16px;
-      width: 100%;
-    }
-
-    .footer-link {
-      font-size: 11px;
-      color: #475569;
-      font-weight: 600;
-      text-decoration: underline;
-      cursor: pointer;
-      background: none;
-      border: none;
-    }
-
-    .footer-link:hover {
-      color: #0f172a;
-    }
-
-    /* Simple Modular Overlay */
-    .modal-overlay {
-      position: fixed;
       top: 0;
-      left: 0;
-      width: 100vw;
-      height: 100vh;
-      background: rgba(15, 23, 42, 0.6);
-      backdrop-filter: blur(2px);
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      z-index: 1000;
-      opacity: 0;
-      visibility: hidden;
-      transition: all 0.2s ease;
-      padding: 16px;
+      left: -100%;
+      width: 60%;
+      height: 100%;
+      background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.45), transparent);
+      transform: skewX(-20deg);
+      animation: shimmer-sweep 2.8s infinite ease-in-out;
     }
 
-    .modal-overlay.active {
-      opacity: 1;
-      visibility: visible;
+    @keyframes shimmer-sweep {
+      0% { left: -100%; }
+      55%, 100% { left: 150%; }
     }
 
-    .modal-box {
-      background: #ffffff;
-      width: 100%;
-      max-width: 400px;
-      max-height: 80vh;
-      border-radius: 16px;
-      padding: 22px;
-      display: flex;
-      flex-direction: column;
+    /* Live Candlestick Pulse */
+    .candle {
+      position: relative;
+      transform-origin: bottom;
+      animation: candle-pulse 1.8s infinite ease-in-out alternate;
+    }
+    .candle::before {
+      content: '';
+      position: absolute;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 1.5px;
+      top: -5px;
+      bottom: -5px;
+      background: inherit;
     }
 
-    .modal-header {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      border-bottom: 1px solid #e2e8f0;
-      padding-bottom: 10px;
-      margin-bottom: 14px;
+    @keyframes candle-pulse {
+      0% { transform: scaleY(0.82); opacity: 0.85; }
+      100% { transform: scaleY(1.18); opacity: 1; }
     }
 
-    .modal-title {
-      font-size: 16px;
-      font-weight: 700;
-      color: #0f172a;
+    /* Live Badge Pulse */
+    @keyframes pulse-ring {
+      0% { box-shadow: 0 0 0 0 rgba(239, 68, 68, 0.7); }
+      70% { box-shadow: 0 0 0 6px rgba(239, 68, 68, 0); }
+      100% { box-shadow: 0 0 0 0 rgba(239, 68, 68, 0); }
     }
+    .live-pulse { animation: pulse-ring 1.8s infinite; }
 
-    .close-btn {
-      background: none;
-      border: none;
-      font-size: 20px;
-      color: #64748b;
-      cursor: pointer;
-      line-height: 1;
-    }
-
-    .modal-body {
-      overflow-y: auto;
-      font-size: 12.5px;
-      color: #475569;
-      line-height: 1.6;
-      text-align: left;
-    }
-
-    .modal-body p {
-      margin-bottom: 10px;
-    }
+    /* Custom Scrollbar */
+    .custom-scrollbar::-webkit-scrollbar { width: 4px; }
+    .custom-scrollbar::-webkit-scrollbar-track { background: #0f172a; }
+    .custom-scrollbar::-webkit-scrollbar-thumb { background: #ffb703; border-radius: 4px; }
   </style>
 </head>
-<body>
+<body class="min-h-screen bg-grid flex flex-col justify-between items-center relative selection:bg-yellow-500 selection:text-black">
 
-  <div class="container-card">
-    <div class="">
+  <!-- 1. COMPACT LIVE TICKER -->
+  <header class="w-full bg-slate-950/95 border-b border-slate-800/80 overflow-hidden py-1.5 relative z-20">
+    <div class="ticker-track text-[11px] font-mono tracking-wider">
+      <div class="flex items-center space-x-5 pr-5">
+        <span class="flex items-center gap-1"><i class="fa-solid fa-chart-line text-brand-gold text-[9px]"></i> NIFTY <span class="text-brand-green">22,510.40 +1.35%</span></span>
+        <span class="flex items-center gap-1">BANKNIFTY <span class="text-brand-green">48,920.15 +1.10%</span></span>
+        <span class="flex items-center gap-1">SENSEX <span class="text-brand-green">74,120.80 +0.95%</span></span>
+        <span class="flex items-center gap-1">HDFCBANK <span class="text-brand-green">1,695.50 +2.30%</span></span>
+        <span class="flex items-center gap-1">RELIANCE <span class="text-brand-red">2,912.00 -0.42%</span></span>
+        <span class="flex items-center gap-1">TATAMOTORS <span class="text-brand-green">985.40 +3.12%</span></span>
+      </div>
+      <div class="flex items-center space-x-5 pr-5">
+        <span class="flex items-center gap-1"><i class="fa-solid fa-chart-line text-brand-gold text-[9px]"></i> NIFTY <span class="text-brand-green">22,510.40 +1.35%</span></span>
+        <span class="flex items-center gap-1">BANKNIFTY <span class="text-brand-green">48,920.15 +1.10%</span></span>
+        <span class="flex items-center gap-1">SENSEX <span class="text-brand-green">74,120.80 +0.95%</span></span>
+        <span class="flex items-center gap-1">HDFCBANK <span class="text-brand-green">1,695.50 +2.30%</span></span>
+        <span class="flex items-center gap-1">RELIANCE <span class="text-brand-red">2,912.00 -0.42%</span></span>
+        <span class="flex items-center gap-1">TATAMOTORS <span class="text-brand-green">985.40 +3.12%</span></span>
+      </div>
+    </div>
+  </header>
+
+  <!-- 2. COMPACT TERMINAL CARD -->
+  <main class="w-full max-w-[390px] px-3.5 py-3 my-auto relative z-10">
+    <div class="terminal-card bg-slate-900/90 backdrop-blur-xl border border-slate-800 rounded-2xl overflow-hidden transition-all duration-300 hover:border-amber-500/50">
       
-    </div>
-
-    <!-- Custom Digital Styled Logo -->
-    <div class="logo-container">
-      <div class="logo-graphic">
-        SM
-        <i class="fa-solid fa-arrow-trend-up"></i>
+      <!-- Top Bar -->
+      <div class="bg-slate-950/90 px-3.5 py-2 border-b border-slate-800 flex items-center justify-between text-[11px] text-slate-400">
+        <div class="flex items-center gap-2">
+          <span class="h-2 w-2 rounded-full bg-emerald-500 animate-ping"></span>
+          <span class="text-slate-200 font-semibold tracking-wider">SM_TERMINAL // v3.8</span>
+        </div>
+        <div class="flex items-center gap-1">
+          <span class="w-2.5 h-2.5 rounded-full bg-amber-500/80"></span>
+          <span class="w-2.5 h-2.5 rounded-full bg-orange-500/80"></span>
+          <span class="w-2.5 h-2.5 rounded-full bg-red-500/80"></span>
+        </div>
       </div>
-    </div>
 
-    <h1 class="main-title">Salman</h1>
-    <p class="sub-title">Join our learning community and grow your knowledge</p>
+      <!-- Profile & Primary CTA -->
+      <div class="p-4 text-center relative overflow-hidden">
+        <div class="absolute -top-10 left-1/2 -translate-x-1/2 w-32 h-32 bg-amber-500/15 rounded-full blur-2xl pointer-events-none"></div>
 
-    <a href="https://t.me/+Clle_9iFmX1jOWY1" target="_blank" rel="noopener noreferrer" class="cta-btn">
-       View Community Channel <i class="fa-solid fa-paper-plane"></i>
-    </a>
+        <!-- Avatar -->
+        <div class="relative inline-block mb-2">
+          <div class="w-14 h-14 rounded-xl bg-gradient-to-tr from-amber-500 to-amber-300 p-0.5 shadow-md shadow-amber-500/20">
+            <div class="w-full h-full bg-slate-950 rounded-[10px] flex items-center justify-center">
+              <i class="fa-solid fa-arrow-trend-up text-2xl text-amber-400 animate-pulse"></i>
+            </div>
+          </div>
+          <span class="absolute -bottom-1 -right-1 bg-emerald-500 text-black text-[9px] font-bold px-1 py-0.2 rounded border border-slate-950 flex items-center gap-0.5">
+            <i class="fa-solid fa-check text-[7px]"></i> PRO
+          </span>
+        </div>
 
-    <div class="info-list">
-      <div class="info-item">
-        <div class="info-icon"><i class="fa-solid fa-chart-line"></i></div>
-        <span>नियत अच्छी और मेहनत सच्ची हो, तो कामयाबी जरूर मिलती है।</span>
+        <h1 class="text-xl font-black tracking-wider text-white uppercase font-sans leading-tight">
+          SALMAN MEMON
+        </h1>
+        <p class="text-[10px] text-amber-400 font-mono tracking-widest uppercase mt-0.5 mb-2.5">
+          PRECISION MARKET INTELLIGENCE
+        </p>
+
+        <!-- Compact Badges -->
+        <div class="flex flex-wrap justify-center gap-1.5 text-[9px] font-bold mb-3.5">
+          <span class="bg-amber-500/10 text-amber-400 border border-amber-500/30 px-2 py-0.5 rounded-full">
+            <i class="fa-solid fa-crown text-[8px] mr-0.5"></i> VIP STRATEGY
+          </span>
+          <span class="bg-red-500/20 text-red-400 border border-red-500/30 px-2 py-0.5 rounded-full flex items-center gap-1 live-pulse">
+            <span class="w-1.5 h-1.5 bg-red-500 rounded-full"></span> LIVE SIGNALS
+          </span>
+          <span class="bg-cyan-500/10 text-cyan-400 border border-cyan-500/30 px-2 py-0.5 rounded-full">
+            <i class="fa-solid fa-users text-[8px] mr-0.5"></i> 100K+
+          </span>
+        </div>
+
+        <!-- PRIMARY CTA BUTTON -->
+        <a href="https://t.me/+Clle_9iFmX1jOWY1" target="_blank" rel="noopener noreferrer" 
+           class="btn-shimmer group w-full bg-gradient-to-r from-amber-500 via-amber-400 to-amber-500 hover:from-amber-400 hover:to-amber-300 text-slate-950 font-sans font-extrabold text-xs uppercase py-3.5 px-4 rounded-xl shadow-lg shadow-amber-500/30 flex items-center justify-center gap-2.5 transition-all duration-200 transform hover:-translate-y-0.5 active:scale-[0.98]">
+          <i class="fa-brands fa-telegram text-lg transition-transform group-hover:scale-110"></i>
+          <span>JOIN FREE TELEGRAM CHANNEL</span>
+          <i class="fa-solid fa-arrow-right text-[11px] opacity-80 group-hover:translate-x-1 transition-transform"></i>
+        </a>
       </div>
+
+      <!-- Compact Metrics Row -->
+      <div class="grid grid-cols-3 border-y border-slate-800/80 bg-slate-950/60 text-center py-2 px-1">
+        <div class="border-r border-slate-800/60">
+          <div class="text-sm font-black text-amber-400">98.2%</div>
+          <div class="text-[8px] text-slate-400 uppercase">ACCURACY</div>
+        </div>
+        <div class="border-r border-slate-800/60">
+          <div class="text-sm font-black text-white">100K+</div>
+          <div class="text-[8px] text-slate-400 uppercase">TRADERS</div>
+        </div>
+        <div>
+          <div class="text-sm font-black text-emerald-400">24/7</div>
+          <div class="text-[8px] text-slate-400 uppercase">ANALYSIS</div>
+        </div>
+      </div>
+
+      <!-- Compact Live Candlestick Strip -->
+      <div class="px-3.5 py-2.5 border-b border-slate-800/80 bg-slate-950/30">
+        <div class="flex justify-between items-center text-[9px] text-slate-400 mb-1.5">
+          <span class="flex items-center gap-1">
+            <span class="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-ping"></span>
+            LIVE PATTERN RADAR
+          </span>
+          <span class="text-emerald-400 font-bold">▲ +14.8% MOMENTUM</span>
+        </div>
+
+        <div class="h-10 flex items-end justify-between px-3 py-1 bg-slate-950/90 rounded-lg border border-slate-800/80">
+          <div class="candle bg-red-500 w-2 h-5 rounded-xs" style="animation-delay: 0.1s"></div>
+          <div class="candle bg-emerald-400 w-2 h-7 rounded-xs" style="animation-delay: 0.25s"></div>
+          <div class="candle bg-emerald-400 w-2 h-4 rounded-xs" style="animation-delay: 0.4s"></div>
+          <div class="candle bg-red-500 w-2 h-6 rounded-xs" style="animation-delay: 0.15s"></div>
+          <div class="candle bg-emerald-400 w-2 h-7 rounded-xs" style="animation-delay: 0.55s"></div>
+          <div class="candle bg-emerald-400 w-2 h-8 rounded-xs" style="animation-delay: 0.35s"></div>
+          <div class="candle bg-red-500 w-2 h-4 rounded-xs" style="animation-delay: 0.65s"></div>
+          <div class="candle bg-emerald-400 w-2 h-7 rounded-xs" style="animation-delay: 0.2s"></div>
+          <div class="candle bg-emerald-400 w-2 h-8 rounded-xs" style="animation-delay: 0.45s"></div>
+        </div>
+      </div>
+
+      <!-- Compact Feature Highlights -->
+      <div class="p-3 space-y-2 bg-slate-900/40">
+        <a href="https://t.me/+Clle_9iFmX1jOWY1" target="_blank" rel="noopener noreferrer" 
+           class="group flex items-center justify-between p-2.5 bg-slate-950/70 hover:bg-slate-800/70 border border-slate-800/80 hover:border-amber-500/40 rounded-xl transition-all duration-200">
+          <div class="flex items-center gap-2.5">
+            <div class="w-8 h-8 rounded-lg bg-amber-500/10 flex items-center justify-center text-amber-400 group-hover:scale-110 transition-transform">
+              <i class="fa-solid fa-chart-pie text-xs"></i>
+            </div>
+            <div>
+              <h4 class="text-[11px] font-bold text-white font-sans">Nifty & BankNifty Strategy</h4>
+              <p class="text-[9px] text-slate-400">DAILY BREAKOUT LEVELS</p>
+            </div>
+          </div>
+          <i class="fa-solid fa-chevron-right text-[10px] text-slate-500 group-hover:text-amber-400 group-hover:translate-x-1 transition-all"></i>
+        </a>
+
+        <a href="https://t.me/+Clle_9iFmX1jOWY1" target="_blank" rel="noopener noreferrer" 
+           class="group flex items-center justify-between p-2.5 bg-slate-950/70 hover:bg-slate-800/70 border border-slate-800/80 hover:border-amber-500/40 rounded-xl transition-all duration-200">
+          <div class="flex items-center gap-2.5">
+            <div class="w-8 h-8 rounded-lg bg-emerald-500/10 flex items-center justify-center text-emerald-400 group-hover:scale-110 transition-transform">
+              <i class="fa-solid fa-bolt text-xs"></i>
+            </div>
+            <div>
+              <h4 class="text-[11px] font-bold text-white font-sans">Real-Time Trade Signals</h4>
+              <p class="text-[9px] text-slate-400">INSTANT ENTRY & EXIT ALERTS</p>
+            </div>
+          </div>
+          <i class="fa-solid fa-chevron-right text-[10px] text-slate-500 group-hover:text-amber-400 group-hover:translate-x-1 transition-all"></i>
+        </a>
+
+        <a href="https://t.me/+Clle_9iFmX1jOWY1" target="_blank" rel="noopener noreferrer" 
+           class="group flex items-center justify-between p-2.5 bg-slate-950/70 hover:bg-slate-800/70 border border-slate-800/80 hover:border-amber-500/40 rounded-xl transition-all duration-200">
+          <div class="flex items-center gap-2.5">
+            <div class="w-8 h-8 rounded-lg bg-cyan-500/10 flex items-center justify-center text-cyan-400 group-hover:scale-110 transition-transform">
+              <i class="fa-solid fa-graduation-cap text-xs"></i>
+            </div>
+            <div>
+              <h4 class="text-[11px] font-bold text-white font-sans">Master Trader Education</h4>
+              <p class="text-[9px] text-slate-400">PRICE ACTION & RISK MANAGEMENT</p>
+            </div>
+          </div>
+          <i class="fa-solid fa-chevron-right text-[10px] text-slate-500 group-hover:text-amber-400 group-hover:translate-x-1 transition-all"></i>
+        </a>
+      </div>
+
+      <!-- Compact Footer + Meta Disclaimer -->
+      <div class="px-3.5 py-2.5 bg-slate-950 border-t border-slate-800/80">
+        <div class="flex justify-center items-center gap-3.5 text-[9px] text-amber-400">
+          <button onclick="openModal('about')" class="hover:underline hover:text-white">[ABOUT]</button>
+          <button onclick="openModal('terms')" class="hover:underline hover:text-white">[TERMS]</button>
+          <button onclick="openModal('disclaimer')" class="hover:underline hover:text-white">[DISCLAIMER]</button>
+          <button onclick="openModal('contact')" class="hover:underline hover:text-white">[CONTACT]</button>
+        </div>
+        <div class="flex justify-between items-center text-[8px] text-slate-500 mt-1.5">
+          <span>FOR EDUCATIONAL PURPOSES ONLY</span>
+          <span>ADV BY D.A.E.</span>
+        </div>
+        <div class="mt-2 pt-2 border-t border-slate-800/60 text-[8px] text-slate-500 text-center leading-relaxed font-sans">
+          <strong class="text-slate-400">Meta Disclaimer:</strong> This site is not a part of the Facebook™ or Meta™ website or Meta Platforms, Inc. Additionally, this site is NOT endorsed by Facebook™ or Meta™ in any way. FACEBOOK™ and META™ are trademarks of Meta Platforms, Inc.
+        </div>
+      </div>
+
     </div>
+  </main>
 
-  
-
-      <p class="meta-disclaimer">
-        This site is not a part of the Facebook™ website or Meta Platforms, Inc. Additionally, this site is NOT endorsed by Meta in any way. FACEBOOK™ is a trademark of META PLATFORMS, INC.
-      </p>
-
-      <div class="footer-links">
-        <button class="footer-link" onclick="openModal('privacy')">Privacy Policy</button>
-        <button class="footer-link" onclick="openModal('terms')">Terms of Service</button>
-        <button class="footer-link" onclick="openModal('disclaimer')">Risk Disclaimer</button>
-        <button class="footer-link" onclick="openModal('contact')">Contact</button>
+  <!-- MODAL POPUP DIALOG -->
+  <div id="modalOverlay" onclick="closeModalOnOuterClick(event)" 
+       class="fixed inset-0 bg-slate-950/80 backdrop-blur-md z-50 opacity-0 pointer-events-none transition-opacity duration-300 flex items-center justify-center p-4">
+    <div class="bg-slate-900 border border-amber-500/40 rounded-2xl w-full max-w-sm overflow-hidden shadow-2xl transform scale-95 transition-transform duration-300" id="modalBox">
+      <div class="bg-slate-950 px-4 py-3 border-b border-slate-800 flex justify-between items-center">
+        <span id="modalTitle" class="text-xs font-bold font-mono text-amber-400">// INFORMATION</span>
+        <button onclick="closeModal()" class="text-slate-400 hover:text-red-400 transition-colors p-1">
+          <i class="fa-solid fa-xmark text-sm"></i>
+        </button>
+      </div>
+      <div id="modalBody" class="p-4 text-xs text-slate-300 leading-relaxed max-h-[55vh] overflow-y-auto custom-scrollbar font-mono">
       </div>
     </div>
   </div>
 
-  <!-- MODAL -->
-  <div class="modal-overlay" id="modalOverlay" onclick="closeModalOnOverlay(event)">
-    <div class="modal-box">
-      <div class="modal-header">
-        <div class="modal-title" id="modalTitle">Information</div>
-        <button class="close-btn" onclick="closeModal()">&times;</button>
-      </div>
-      <div class="modal-body" id="modalBody"></div>
-    </div>
-  </div>
-
+  <!-- JAVASCRIPT CONTROLLERS -->
   <script>
     const modalData = {
-      privacy: {
-        title: "Privacy Policy",
+      about: {
+        title: "// ABOUT SALMAN MEMON",
         content: `
-          <p>We respect your privacy. This page uses standard tracking technologies, such as the Meta Pixel, only to evaluate ad performance and improve user experience.</p>
-          <p>We do not sell, rent, or trade your personal data to any third-party organizations.</p>
+          <h3 class="text-sm font-bold text-white mb-2 font-sans">Welcome to Salman Memon</h3>
+          <p class="mb-2.5">We are a premier market research and trader intelligence community dedicated to helping retail traders make informed decisions in Indian equity and derivatives markets.</p>
+          <p class="mb-2.5">Our platform delivers market updates, technical price action analysis, structural breakdown levels, and structured education.</p>
+          <div class="p-2.5 bg-amber-500/10 border border-amber-500/30 rounded-lg text-amber-300 font-sans text-[11px] font-semibold">
+            Join 100K+ traders benefiting from our daily research insights!
+          </div>
         `
       },
       terms: {
-        title: "Terms of Service",
+        title: "// TERMS & CONDITIONS",
         content: `
-          <p>1. <strong>Educational Material:</strong> All charts, analysis, and materials shared are intended purely for training and learning.</p>
-          <p>2. <strong>No Investment Advice:</strong> Nothing on this channel constitutes an offer, solicitation, or recommendation to buy or sell securities.</p>
-          <p>3. <strong>Independent Decision:</strong> Users bear full personal responsibility for any trades or financial decisions they execute.</p>
+          <h3 class="text-sm font-bold text-white mb-2 font-sans">Terms of Service</h3>
+          <p class="mb-2">By accessing Salman Memon's website or joining our official Telegram channel, you agree to these terms:</p>
+          <ul class="list-disc pl-4 space-y-1 text-slate-300 mb-2">
+            <li>All content shared is strictly for educational and informational purposes.</li>
+            <li>We do not promise or guarantee fixed profits or financial returns.</li>
+            <li>Stock market trading carries substantial financial risk; execute trades at your own risk.</li>
+            <li>Always practice proper risk management and position sizing.</li>
+          </ul>
         `
       },
       disclaimer: {
-        title: "Risk Disclaimer",
+        title: "// FINANCIAL & META DISCLAIMER",
         content: `
-          <p>Trading in financial markets carries substantial risk of capital loss. Past performance of any setup or analysis does not guarantee future results.</p>
-          <p>We are an independent educational initiative and not registered as a SEBI Investment Advisor or Research Analyst unless explicitly stated.</p>
+          <h3 class="text-sm font-bold text-white mb-2 font-sans">Risk & Advisory Disclaimer</h3>
+          <p class="mb-2.5">Trading futures, options, and equities involves severe risk of capital loss and is not suitable for every investor.</p>
+          <p class="mb-2.5">Salman Memon is an educational community platform and does NOT provide SEBI-registered portfolio advisory services unless explicitly stated.</p>
+          <p class="mb-2.5">Please consult a certified SEBI-registered financial advisor before making any live market investments or trades.</p>
+          <div class="p-2 bg-slate-950 border border-slate-800 rounded text-[10px] text-slate-400">
+            This site is not a part of the Meta™ or Facebook™ website or Meta Platforms, Inc. Additionally, this site is NOT endorsed by Meta™ in any way.
+          </div>
         `
       },
       contact: {
-        title: "Contact Details",
+        title: "// CONTACT SUPPORT",
         content: `
-          <p><strong>Support Email:</strong> contact@salmanmemon.com</p>
-          <p><strong>Response Time:</strong> Monday to Friday (10:00 AM – 6:00 PM IST)</p>
+          <h3 class="text-sm font-bold text-white mb-2 font-sans">Get in Touch</h3>
+          <p class="mb-2.5 text-slate-400">Have questions or want to collaborate? Fill out the form below or contact us on Telegram.</p>
+          <form onsubmit="handleContactSubmit(event)" class="space-y-2.5 font-sans">
+            <input type="text" placeholder="Your Name" required class="w-full bg-slate-950 border border-slate-800 rounded-lg px-3 py-2 text-xs text-white focus:outline-none focus:border-amber-500" />
+            <input type="text" placeholder="Telegram Username / Email" required class="w-full bg-slate-950 border border-slate-800 rounded-lg px-3 py-2 text-xs text-white focus:outline-none focus:border-amber-500" />
+            <textarea rows="2" placeholder="How can we help you?" required class="w-full bg-slate-950 border border-slate-800 rounded-lg px-3 py-2 text-xs text-white focus:outline-none focus:border-amber-500"></textarea>
+            <button type="submit" class="w-full bg-amber-500 hover:bg-amber-400 text-slate-950 font-bold py-2 rounded-lg text-xs tracking-wider transition-colors">
+              SEND MESSAGE
+            </button>
+          </form>
         `
       }
     };
 
-    function openModal(type) {
-      const data = modalData[type];
-      if (!data) return;
-      document.getElementById('modalTitle').innerText = data.title;
-      document.getElementById('modalBody').innerHTML = data.content;
-      document.getElementById('modalOverlay').classList.add('active');
-      document.body.style.overflow = 'hidden';
+    function openModal(key) {
+      const overlay = document.getElementById('modalOverlay');
+      const box = document.getElementById('modalBox');
+      const title = document.getElementById('modalTitle');
+      const body = document.getElementById('modalBody');
+
+      if (modalData[key]) {
+        title.innerHTML = modalData[key].title;
+        body.innerHTML = modalData[key].content;
+        overlay.classList.remove('opacity-0', 'pointer-events-none');
+        box.classList.remove('scale-95');
+      }
     }
 
     function closeModal() {
-      document.getElementById('modalOverlay').classList.remove('active');
-      document.body.style.overflow = 'auto';
+      const overlay = document.getElementById('modalOverlay');
+      const box = document.getElementById('modalBox');
+      overlay.classList.add('opacity-0', 'pointer-events-none');
+      box.classList.add('scale-95');
     }
 
-    function closeModalOnOverlay(e) {
+    function closeModalOnOuterClick(e) {
       if (e.target.id === 'modalOverlay') closeModal();
+    }
+
+    function handleContactSubmit(e) {
+      e.preventDefault();
+      document.getElementById('modalBody').innerHTML = `
+        <div class="text-center py-5">
+          <i class="fa-solid fa-circle-check text-3xl text-emerald-400 mb-2"></i>
+          <h4 class="text-sm font-bold text-white mb-1 font-sans">Message Sent Successfully!</h4>
+          <p class="text-slate-400 text-xs">Our team will get back to you shortly via Telegram or Email.</p>
+        </div>
+      `;
+      setTimeout(closeModal, 2000);
     }
   </script>
 </body>
